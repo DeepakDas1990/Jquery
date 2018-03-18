@@ -3,7 +3,7 @@ $(function() {
 
   // Uncomment this line to fade out the red box on page load
   $(".red-box").fadeOut(2000);
-  //$(".red-box").fadeOut();
-  //$(".red-box").fadeOut("slow");
-  //$(".red-box").fadeOut("fast");
+  $(".green-box").fadeOut(2000);
+  $(".red-box").fadeIn(1000);
+  $(".red-box").fadeTo(1000,0.5);
 });
