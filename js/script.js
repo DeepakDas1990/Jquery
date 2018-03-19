@@ -1,10 +1,9 @@
-$(function() {
-  
+$(function () {
   $(".blue-box").animate({
-    "margin-left":"+=200px"
-  },1000);
-
-  $(".blue-box").animate({
-    "margin-left":"-=200px"
-  },1000);
+    marginLeft: "+=200px",
+    opacity: "0",
+    height: "25px",
+    width: "25px",
+    marginTop: "25px"
+  }, 1000);
 });
