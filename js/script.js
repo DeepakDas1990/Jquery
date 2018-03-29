@@ -1,16 +1,25 @@
 $(function () {
-  //$("#list").find("li").filter(":even").css("background-color","rgba(180,180,30,0.8)");
-  //$("#list").children("li").filter(":even").css("background-color","rgba(180,180,30,0.8)");
-  // $("li").filter(function (index) {
-  //   return (index % 2 == 1);
-  // }).css("background-color", "rgba(180,180,30,0.8)");
-  //$("li").first().css("background-color", "rgba(180,180,30,0.8)");
-  //$("li").last().css("background-color", "rgba(180,180,30,0.8)");
-  //$("li").eq(7).css("background-color", "rgba(180,180,30,0.8)");
-  //$("li").eq(-3).css("background-color", "rgba(180,180,30,0.8)");
-  //$("li").not(":first").css("background-color", "rgba(180,180,30,0.8)");
-  // $("li").not(function (index) {
-  //   return index % 2 == 0;
-  // }).css("background-color", "rgba(180,180,30,0.8)");
-  $("li").not("#list ul li").css("background-color", "rgba(180,180,30,0.8)");
+  //$("ul ul:first").append("<li>This is the last sub-item</li>");
+  //$("ul ul:last").append("<li>This is the last sub-item</li>");
+  //$("ul ul:even").append("<li>This is the last sub-item</li>");
+  //$("ul ul:odd").append("<li>This is the last sub-item</li>");
+  //$("ul ul").append("<li>This is the last sub-item</li>");
+  //$("ul").append("<li>This is the last sub-item</li>");
+
+  //$("ul ul:first").prepend("<li>This is the last sub-item</li>");
+  //$("#content").prepend("<h4>Deepak Bidyabhusan Das</h4>");
+
+  //$(".red-box").after("<div class='red-box'>Another Red Box</div>");
+  //$(".blue-box").before("<div class='blue-box'>Another Red Box</div>");
+
+  // $(".blue-box").before(function () {
+  //   return "<div class='blue-box'>Another Blue Box</div>";
+  // });
+
+  //$(".blue-box").before($(".red-box"));
+  //$("p").after($("#list"));
+
+  $(".red-box").before("<div class='red-box'>Another Red Box</div>");
+  $(".blue-box").before("<div class='blue-box'>Another Blue Box</div>");
+  $(".green-box").before("<div class='green-box'>Another Green Box</div>");
 });
