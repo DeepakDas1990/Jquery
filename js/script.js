@@ -1,15 +1,22 @@
 $(function () {
-    //$("li").replaceWith("<li>Replaced.</li>"); 
-    //  $("li").replaceWith(function () {
-    //      return "<li>Replaced With Function</li>";
-    //  }); 
-    //var firstListItem = $("li:first");
-    //$("p:first").replaceWith(firstListItem);
-    //$("p").replaceWith(firstListItem);
+    //$("li").remove();
+    //$("input[type=email],input[type=submit]").remove();
+    //$("form").children().not("input:text,textarea,br").remove();
 
-    var greenbox = $(".green-box");
-    // $(".red-box").replaceWith(greenbox);
-    // $(".blue-box").replaceWith(greenbox);
-    //$(".red-box,.blue-box").replaceWith(greenbox);
-    $(".red-box,.blue-box").replaceWith("<div class='green-box'>More Green</div>");
+    // var removedListItem = $("li").remove();
+    // $("#content").append(removedListItem);
+
+    // var detachedListItem = $("li").detach();
+    // $("#detachedList").append(detachedListItem);
+
+    /*
+    difference between remove() and detach here is, if the removed part has any event handler, they will removed too.
+    So it's better practice to use Detach() over Remove(). 
+    */
+   
+    //$("p:first").empty();
+    $(".red-box,.green-box,.blue-box").empty();
+    /*
+        empty() method only removes the content of the tag..not the tag itself.
+     */
 });
