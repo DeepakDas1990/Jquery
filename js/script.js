@@ -1,22 +1,22 @@
 $(function () {
-    //$("li").remove();
-    //$("input[type=email],input[type=submit]").remove();
-    //$("form").children().not("input:text,textarea,br").remove();
+    // var specialLink = $("#special-link");
+    // console.log(specialLink.attr("href"));
+    // specialLink.attr("href","https://github.com/DeepakDas1990/Jquery");
 
-    // var removedListItem = $("li").remove();
-    // $("#content").append(removedListItem);
+    // var checkbox = $("input:checkbox");
+    // console.log(checkbox.prop("checked"));
+    // console.log(checkbox.attr("checked"));
 
-    // var detachedListItem = $("li").detach();
-    // $("#detachedList").append(detachedListItem);
+    var textInput = $("input:text");
+    console.log(textInput.val());
+    var rangeInput = $("input[type='range']");
+    console.log(rangeInput.val());
+    
+    textInput.val("Pravakar Das");
+    rangeInput.val("50");
 
-    /*
-    difference between remove() and detach here is, if the removed part has any event handler, they will removed too.
-    So it's better practice to use Detach() over Remove(). 
-    */
-   
-    //$("p:first").empty();
-    $(".red-box,.green-box,.blue-box").empty();
-    /*
-        empty() method only removes the content of the tag..not the tag itself.
+    /**
+     * Difference between prop() and attr() is, prop will load the current state of the property, 
+     * where as attr() will always load the first state of the property. 
      */
 });
