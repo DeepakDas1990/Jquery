@@ -1,37 +1,20 @@
 $(function () {
-    $("#btn-hover").hover(function () {
-        alert("button is hovered");
+    // $("html").on("click keydown", function() {
+    //     console.log("Mouse was clicked or a key was pressed");
+    // });
+
+    var i = 0;
+    var images = [
+        "images/laptop-mobile_small.jpg",
+        "images/laptop-on-table_small.jpg",
+        "images/people-office-group-team_small.jpg",
+    ];
+    $("img").on("click", function () {
+        i = (i + 1) % images.length;
+        $(this).fadeOut(function() {
+            $(this).attr("src", images[i]).fadeIn();
+        });
+
+        
     });
-
-    $(".green-box").hover(function () {
-        $(this).text("I was Hovered");
-    });
-
-    var bluebox = $(".blue-box");
-
-    // bluebox.mouseenter(function () {
-    //     $(this).fadeTo(500, 0.8);
-    // });
-
-    // bluebox.mouseleave(function () {
-    //     $(this).fadeTo(500, 1);
-    // });
-
-    // bluebox.mouseenter(function () {
-    //     $(this).stop().fadeTo(500, 0.8);
-    // });
-
-    // bluebox.mouseleave(function () {
-    //     $(this).stop().fadeTo(500, 1);
-    // });
-
-
-    //hover(mouseenter,mouseleave)
-    bluebox.hover(function() {
-        $(this).stop().fadeTo(500,0.7);
-    },function() {
-        $(this).stop().fadeTo(500,1);
-    });
-
-    // better practice to use stop() method
 });
