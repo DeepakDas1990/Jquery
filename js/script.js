@@ -1,19 +1,24 @@
 $(document).ready(function () {
-    var i = 0;
-    var images = [
-        "images/laptop-mobile_small.jpg",
-        "images/laptop-on-table_small.jpg",
-        "images/people-office-group-team_small.jpg",
-    ];
-    var galleryimage = $(".gallery").find("img");
+    $("img").css("display", "none");
+    // one disadvantage of event handler is, they will not applicable on elements which are added dynamically.
+    // below code is an example
+    // $("p").on("click", function () {
+    //     $(this).slideUp();
+    // });
+    // $("#content").append("<p>This is dynamically added paragraph.</p>");
 
-    function changeImage() {
-        i = (i + 1) % images.length;
-        galleryimage.fadeOut(function () {
-            galleryimage.attr("src", images[i]).fadeIn();
-        });
-    }
-    galleryimage.on("click", changeImage);
+    //Solution is delegate events.
+    // $("#content").on("click", "p", function () {
+    //     $(this).slideUp();
+    // });
+    // $("#content").append("<p>This is dynamically added paragraph.</p>");
+
+    $("body").on("mouseenter", "li li", function () {
+        $(this).css("color","Green");
+    });
+    $("body").on("mouseleave", "li li", function () {
+        $(this).css("color","Black");
+    });
 });
 
 
