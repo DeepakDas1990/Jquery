@@ -1,16 +1,23 @@
 $(document).ready(function () {
-    $("#btn-click").click({
-        user: "Deepak",
-        domain: "deepak.b@sourceedge.com"
-    }, function (event) {
-        greetUser(event.data);
+    var galleryImages = $(".gallery").find("img");
+    galleryImages.css("width", "33%").css("opacity", "0.7");
+
+    galleryImages.hover(function () {
+        $(this).stop().fadeTo(500, 1);
+    }
+        , function () {
+            $(this).stop().fadeTo(500, 0.7);
+        });
+
+    galleryImages.click(function () {
+        var source = $(this).attr("src");
+        var image = $("<img>").attr("src", source).css("width", "100%");
+        $(".lightbox").empty().append(image).fadeIn(2000);
     });
 
-    function greetUser(eventdata) {
-        var username = eventdata.user || "Anonymous";
-        var domain = eventdata.domain || "example.com";
-        alert("welcome back " + username + " from " + domain);
-    }
+    $(".lightbox").click(function() {
+        $(this).stop().fadeOut();
+    });
 });
 
 
