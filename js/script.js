@@ -1,11 +1,15 @@
 $(function () {
-    var firstpara = $("p:first");
-    // console.log(firstpara.text());
-    // console.log(firstpara.html());
-    // console.log($("p").html());
-    // console.log($("p").text());
-    //firstpara.text("<strong>Hello World !</div>");
-    //firstpara.html("<strong>Hello World !</div>");
-
-    firstpara.html(firstpara.html() + " This is a new sentence added.");
+   $("#btn-click").click(function (event) {
+       console.log(event);
+       alert('Button was Clicked');
+   });
+   $(".red-box").click(function () {
+       alert("Red box is clicked");
+       $(this).fadeTo(1000,0.5);
+   });
+   $(".red-box").click();
+   /**
+    * $(".red-box").click();
+    * by writing this code, it will automatically invoke the click handler, while page load.
+    */
 });
