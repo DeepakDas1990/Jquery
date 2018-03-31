@@ -1,22 +1,20 @@
 $(function () {
-    $(".gallery").css("display","none"); 
+    $("img").css("display","none");
+    $("a").addClass("fancy-link");
+    $("p:first").addClass("large emphasize");
 
-    var redbox = $(".red-box");
-    console.log(redbox.css("width"));
-    console.log(redbox.width());
+    $("li li").addClass(function (index) {
+        $(this).addClass("item-"+ index);
+    });
 
-    redbox.css("background-color","#AA7700");
-    $("p").css("font-size","18px");
+    $("div").addClass(function (index,currentClass) {
+       if(currentClass=="dummy"){
+           return "red-box";
+       }
+    });
 
-    redbox.css("width","+=20px");   
+    //$(".red-box").removeClass("red-box");
+    //$(".red-box").removeClass("red-box").addClass("blue-box");
+    $(".dummy").removeClass("dummy").addClass("green-box");
 
-    var properties = $("p").css(["font-size","line-height","color"]);
-    console.log(properties);
-    console.log(properties["font-size"]);
-
-    redbox.css("user-select","none");
-
-    redbox.css("user-select",function () {
-        return "none";
-    })
 });
