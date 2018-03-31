@@ -1,24 +1,16 @@
 $(document).ready(function () {
-    $("img").css("display", "none");
-    // one disadvantage of event handler is, they will not applicable on elements which are added dynamically.
-    // below code is an example
-    // $("p").on("click", function () {
-    //     $(this).slideUp();
-    // });
-    // $("#content").append("<p>This is dynamically added paragraph.</p>");
-
-    //Solution is delegate events.
-    // $("#content").on("click", "p", function () {
-    //     $(this).slideUp();
-    // });
-    // $("#content").append("<p>This is dynamically added paragraph.</p>");
-
-    $("body").on("mouseenter", "li li", function () {
-        $(this).css("color","Green");
+    $("#btn-click").click({
+        user: "Deepak",
+        domain: "deepak.b@sourceedge.com"
+    }, function (event) {
+        greetUser(event.data);
     });
-    $("body").on("mouseleave", "li li", function () {
-        $(this).css("color","Black");
-    });
+
+    function greetUser(eventdata) {
+        var username = eventdata.user || "Anonymous";
+        var domain = eventdata.domain || "example.com";
+        alert("welcome back " + username + " from " + domain);
+    }
 });
 
 
