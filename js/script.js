@@ -1,19 +1,11 @@
 $(function () {
-    // var gallery = $(".gallery");
-    // var images = [
-    //     "images/laptop-mobile_small.jpg",
-    //     "images/laptop-on-table_small.jpg",
-    //     "images/people-office-group-team_small.jpg",
-    // ];
+    var firstpara = $("p:first");
+    // console.log(firstpara.text());
+    // console.log(firstpara.html());
+    // console.log($("p").html());
+    // console.log($("p").text());
+    //firstpara.text("<strong>Hello World !</div>");
+    //firstpara.html("<strong>Hello World !</div>");
 
-    // gallery.data("avaialableImages",images);
-    // console.log(gallery.data());
-    // gallery.data("name","The Awesome Gallery");
-    // console.log(gallery.data());
-    // gallery.removeData("name");
-    // console.log(gallery.data());
-
-    var para = $("p");
-    console.log(para.data());
-
+    firstpara.html(firstpara.html() + " This is a new sentence added.");
 });
