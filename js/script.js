@@ -1,22 +1,18 @@
 $(function () {
-    // var specialLink = $("#special-link");
-    // console.log(specialLink.attr("href"));
-    // specialLink.attr("href","https://github.com/DeepakDas1990/Jquery");
+    var galleryImage = $(".gallery").find("img").first();
+    var images = [
+        "images/laptop-mobile_small.jpg",
+        "images/laptop-on-table_small.jpg",
+        "images/people-office-group-team_small.jpg",
+    ];
 
-    // var checkbox = $("input:checkbox");
-    // console.log(checkbox.prop("checked"));
-    // console.log(checkbox.attr("checked"));
-
-    var textInput = $("input:text");
-    console.log(textInput.val());
-    var rangeInput = $("input[type='range']");
-    console.log(rangeInput.val());
-    
-    textInput.val("Pravakar Das");
-    rangeInput.val("50");
-
-    /**
-     * Difference between prop() and attr() is, prop will load the current state of the property, 
-     * where as attr() will always load the first state of the property. 
-     */
+    var i = 0;
+    setInterval(function () {
+        i = (i + 1) % images.length;
+        galleryImage.fadeOut(function () {
+            $(this).attr("src",images[i]);
+            $(this).fadeIn();
+        });
+        console.log(galleryImage.attr("src"));
+    }, 3000);
 });
