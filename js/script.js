@@ -1,20 +1,19 @@
 $(function () {
-    $("img").css("display","none");
-    $("a").addClass("fancy-link");
-    $("p:first").addClass("large emphasize");
+    // var gallery = $(".gallery");
+    // var images = [
+    //     "images/laptop-mobile_small.jpg",
+    //     "images/laptop-on-table_small.jpg",
+    //     "images/people-office-group-team_small.jpg",
+    // ];
 
-    $("li li").addClass(function (index) {
-        $(this).addClass("item-"+ index);
-    });
+    // gallery.data("avaialableImages",images);
+    // console.log(gallery.data());
+    // gallery.data("name","The Awesome Gallery");
+    // console.log(gallery.data());
+    // gallery.removeData("name");
+    // console.log(gallery.data());
 
-    $("div").addClass(function (index,currentClass) {
-       if(currentClass=="dummy"){
-           return "red-box";
-       }
-    });
-
-    //$(".red-box").removeClass("red-box");
-    //$(".red-box").removeClass("red-box").addClass("blue-box");
-    $(".dummy").removeClass("dummy").addClass("green-box");
+    var para = $("p");
+    console.log(para.data());
 
 });
