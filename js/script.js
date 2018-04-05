@@ -1,47 +1,41 @@
 $(document).ready(function () {
-    var ErrorCounter = 0;
-
     $("#form").submit(function (event) {
-        ErrorCounter = 0;
-        var name = $("#name").val();
-        var password = $("#password").val();
-        var message = $("#message").val();
+        var name = $("#name").val().trim();
+        var password = $("#password").val().trim();
+        var message = $("#message").val().trim();
         var checked = $("#checkbox").is(":checked");
 
-        validateName(name, ErrorCounter);
-        validatePassword(password, ErrorCounter);
-        validateMessage(message, ErrorCounter);
-        validateCheckBox(checked, ErrorCounter);
+        validateName(name, event);
+        validatePassword(password, event);
+        validateMessage(message, event);
+        validateCheckBox(checked, event);
 
-        if (ErrorCounter > 0) {
-            event.preventDefault();
-        }
     });
 
-    function validateName(name) {
+    function validateName(name,event) {
         if (name.length > 1) {
             $("#name-feedback").text("");
         } else {
             $("#name-feedback").text("Please Enter at lease two characters");
-            ErrorCounter++;
+            event.preventDefault();
         }
     };
 
     function validatePassword(password) {
-        if (password.length > 5) {
+    if (password.length > 5 && /.*[0-9].*/.test(password)) {
             $("#password-feedback").text("");
         } else {
-            $("#password-feedback").text("Please Enter at least 6 characters");
-            ErrorCounter++;
+            $("#password-feedback").text("Password must contain at least 6 characters and a number");
+            event.preventDefault();
         }
     }
 
     function validateMessage(message) {
-        if (message.length > 10) {
+        if (message.length > 0) {
             $("#message-feedback").text("");
         } else {
-            $("#message-feedback").text("Please Enter at least 10 characters");
-            ErrorCounter++;
+            $("#message-feedback").text("Please Enter a message");
+            event.preventDefault();
         }
     }
 
@@ -50,7 +44,7 @@ $(document).ready(function () {
             $("#checkbox-feedback").text("");
         } else {
             $("#checkbox-feedback").text("Please Check the Checkbox");
-            ErrorCounter++;
+            event.preventDefault();
         }
     }
 
