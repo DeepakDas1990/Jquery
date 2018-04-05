@@ -31,24 +31,26 @@
       handlers etc.</p>
 
     <form id="form" action="">
-      <input type="text" value="">
+      <input id="name" type="text" value="" placeholder="Enter your name">
+      <span id="name-feedback"></span>
       <br>
-      <input type="email">
+
+      <input id="password" type="password" placeholder="Enter a password">
+      <span id="password-feedback"></span>
       <br>
-      <select id="selection">
-        <option>select a Fruit</option>
-        <option>Mango</option>
-        <option>Apple</option>
-        <option>Banana</option>
-      </select>
-      <br>
+
       <input type="range" min="0" max="100" value="27">
       <br>
-      <input id="formcheckbox" type="checkbox" name="cb" checked="false">
+
+      <textarea id="message" name="" cols="30" rows="10"></textarea>
+      <span id="message-feedback"></span>
+      <br>
+
+      <input id="checkbox" type="checkbox" name="cb" checked="false">
       <label for="cb"> Check Me </label>
+      <span id="checkbox-feedback"></span>
       <br>
-      <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-      <br>
+
       <input type="submit" value="Submit">
     </form>
   </div>
