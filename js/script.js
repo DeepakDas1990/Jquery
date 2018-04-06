@@ -1,20 +1,16 @@
 $(document).ready(function () {
-    var flickrUrl = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    var PokeAPIUrl = "https://swapi.co/api/people/";
 
-    $.getJSON(flickrUrl, {
-        tags: "football",
-        tagmode: "any",
-        format: "json"
-    }).done(function (data) {
-        $.each(data.items, function (index, item) {
-            console.log(item);
-            $("<img>").attr("src", item.media.m).appendTo("#flicker");
-            if (index == 3) {
-                return false;
-            }
+    $.getJSON(PokeAPIUrl).done(function (data) {
+        $.each(data.results, function (index, result) {
+            var characterName = result.name.charAt(0).toUpperCase() + result.name.slice(1);
+            var par = $("<p>").html("Star Wars Character " + (index + 1) + ":   " + characterName);
+            $("#characterNames").append(par);
         });
     }).fail(function () {
-        alert("ajax call failed");
+        alert("Request to Star wars failed");
+    }).always(function() {
+        console.log("Star wars is awesome");
     });
 });
 
